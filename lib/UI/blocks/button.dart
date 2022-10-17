@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:metronome/Objects.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ButtonPlus extends StatefulWidget {
   const ButtonPlus({Key key}) : super(key: key);
@@ -16,34 +18,21 @@ class _ButtonPlusState extends State<ButtonPlus> {
     return Center(
       child: Container(
         //color: Colors.amber,
-        width: 80,
-        height: 80,
+        width: 65,
+        height: 65,
         child: ElevatedButton(
-          onPressed: () => {
-            setState(() {
-              cout++;
-              metrLogic.addBeat();
-            }),
-          },
-          onLongPress: () => {
-            setState(() {
-              cout--;
-            })
-          },
-          style: const ButtonStyle(
-            backgroundColor: MaterialStatePropertyAll(Colors.black12),
-          ),
-          child: Column(
-            children: [
-              Icon(
-                Icons.add,
-                color: Colors.black,
-              ),
-              Text('$cout'),
-              Text('$metrLogic.getBeats')
-            ],
-          ),
-        ),
+            onPressed: () => {
+                  setState(() {
+                    cout++;
+                    metrLogic.addBeat();
+                  }),
+                },
+            onLongPress: () => {
+                  setState(() {
+                    cout--;
+                  })
+                },
+            child: FaIcon(FontAwesomeIcons.plus)),
       ),
     );
   }
@@ -61,6 +50,164 @@ class _bpmTextState extends State<bpmText> {
   Widget build(BuildContext context) {
     return Container(
       child: Text('$cout'),
+    );
+  }
+}
+
+class UISizeButton extends StatefulWidget {
+  const UISizeButton({Key key}) : super(key: key);
+
+  @override
+  State<UISizeButton> createState() => _UISizeButtonState();
+}
+
+class _UISizeButtonState extends State<UISizeButton> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 65,
+      width: 65,
+      child: ElevatedButton(
+        onPressed: () {},
+        child: Text('${metrLogic.size[0]}/${metrLogic.size[1]}'),
+      ),
+    );
+  }
+}
+
+class UIRitmButton extends StatefulWidget {
+  const UIRitmButton({Key key}) : super(key: key);
+
+  @override
+  State<UIRitmButton> createState() => _UIRitmButtonState();
+}
+
+class _UIRitmButtonState extends State<UIRitmButton> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 65,
+      width: 65,
+      child: ElevatedButton(
+        onPressed: () {},
+        child: Text('${metrLogic.ritmSize[1]}'),
+      ),
+    );
+  }
+}
+
+class UIMinusButton extends StatefulWidget {
+  const UIMinusButton({Key key}) : super(key: key);
+
+  @override
+  State<UIMinusButton> createState() => _UIMinusButtonState();
+}
+
+class _UIMinusButtonState extends State<UIMinusButton> {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        height: 65,
+        width: 65,
+        child: ElevatedButton(
+          onPressed: () {},
+          child: const FaIcon(FontAwesomeIcons.minus),
+        ),
+      ),
+    );
+  }
+}
+
+class UIPlayButton extends StatefulWidget {
+  const UIPlayButton({Key key}) : super(key: key);
+
+  @override
+  State<UIPlayButton> createState() => _UIPlayButtonState();
+}
+
+class _UIPlayButtonState extends State<UIPlayButton> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 65,
+      width: 65,
+      child: ElevatedButton(
+        onPressed: () {},
+        child: const FaIcon(FontAwesomeIcons.play),
+      ),
+    );
+  }
+}
+
+class UITabButton extends StatefulWidget {
+  const UITabButton({Key key}) : super(key: key);
+
+  @override
+  State<UITabButton> createState() => _UITabButtonState();
+}
+
+class _UITabButtonState extends State<UITabButton> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 65,
+      width: 65,
+      child: ElevatedButton(
+        onPressed: () {},
+        child: const Text('Tab'),
+      ),
+    );
+  }
+}
+
+class UITimerConfig extends StatefulWidget {
+  const UITimerConfig({Key key}) : super(key: key);
+
+  @override
+  State<UITimerConfig> createState() => _UITimerConfigState();
+}
+
+class _UITimerConfigState extends State<UITimerConfig> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            child: ElevatedButton(
+              onPressed: () {},
+              child: Text('3 Minute'),
+            ),
+          ),
+          Container(
+            child: ElevatedButton(
+              onPressed: () {},
+              child: Text('4 Minute'),
+            ),
+          ),
+          Container(
+            child: ElevatedButton(
+              onPressed: () {},
+              child: Text('5 Minute'),
+            ),
+          ),
+          Container(
+            child: ElevatedButton(
+              onPressed: () {},
+              child: Row(
+                children: [
+                  Text('Auto'),
+                  Icon(Icons.settings),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

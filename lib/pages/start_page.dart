@@ -37,86 +37,65 @@ class MyRow extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                Container(
-                  child: const Padding(
-                    padding: EdgeInsets.all(10),
-                  ),
+                SizedBox(
+                  height: 20,
                 ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    bitBox,
-                    bitBox,
-                    bitBox,
-                    bitBox,
-                    //ColorBox(),
-                  ],
-                ),
-                Container(
-                  padding: const EdgeInsets.all(20),
+                bitBox.build(context),
+                SizedBox(
+                  height: 20,
                 ),
                 Column(
                   children: [
-                    Container(
-                      child: const Icon(
-                        Icons.account_balance,
-                        size: 40,
-                      ),
-                    ),
-                    Center(
-                      child: Container(
-                        child: Text(
-                          'This could be your ad',
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    )
+                    uiLogo.build(context),
                   ],
+                ),
+                SizedBox(
+                  height: 30,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    ColorBox(),
-                    ColorBox(),
+                    bSizeButton,
+                    bRitmButton,
                   ],
                 ),
-                Container(
-                  padding: const EdgeInsets.all(20),
+                SizedBox(
+                  height: 20,
                 ),
                 Center(
                   child: Container(
-                    child: const Text(
-                      'BPM',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black,
-                      ),
-                    ),
+                    child: BPMText(),
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      child: const Center(
-                        child: ButtonPlus(),
-                      ),
-                    ),
-                    const bpmText(),
-                  ],
+                SizedBox(
+                  height: 25,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    ColorBox(),
-                    ColorBox(),
+                    ButtonPlus(),
+                    UIMinusButton(),
                   ],
                 ),
+                SizedBox(
+                  height: 25,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    UIPlayButton(),
+                    UITabButton(),
+                  ],
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+                Column(
+                  children: [
+                    UITimerConfig(),
+                    UILinerProgress(),
+                  ],
+                )
               ],
             ),
           ),

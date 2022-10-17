@@ -1,7 +1,13 @@
 class MetrLogic {
-  MetrLogic([this._beat = 60, this._beatMin = 20, this._beatMax = 400]);
   int _beat, _beatMin, _beatMax;
   bool _startTik = false;
+  List<int> size = [4, 4];
+  Map<int, dynamic> ritmSize = {
+    1: '8',
+    2: '16',
+  };
+
+  MetrLogic([this._beat = 60, this._beatMin = 20, this._beatMax = 400]);
 
   int _checkBeat(int inputBeat) {
     if (inputBeat > _beatMax) {
