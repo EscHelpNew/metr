@@ -1,5 +1,7 @@
 // ignore_for_file: avoid_print
 
+import 'dart:developer';
+
 import 'package:flutter/foundation.dart';
 import 'dart:io';
 
@@ -46,6 +48,10 @@ class Loggging {
 
   void info(dynamic v1, [dynamic v2, dynamic v3, dynamic v4]) {
     _outputSelect('INFO', v1, v2, v3, v4);
+  }
+
+  void metrics(dynamic v1, [dynamic v2, dynamic v3, dynamic v4]) {
+    _outputSelect('METRICS', v1, v2, v3, v4);
   }
 
   void _outputSelect(dynamic event, dynamic v1,

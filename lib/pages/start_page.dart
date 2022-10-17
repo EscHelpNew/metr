@@ -1,8 +1,7 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'UI/Button.dart';
-import 'Objects.dart';
+import '../UI/blocks/button.dart';
+import '../UI/blocks/other_obj.dart';
+import '../Objects.dart';
 
 String x = uiStyles.theme;
 
@@ -12,23 +11,28 @@ class MyRow extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            x,
+            uiStyles.theme == 'Dark theme'
+                ? uiLang.darkTheme
+                : uiLang.whiteTheme,
+            style: uiStyles.barTextTitle,
           ),
           actions: <Widget>[
             IconButton(
               onPressed: () {},
               icon: const Icon(Icons.account_circle_rounded),
-              iconSize: 40,
+              iconSize: uiStyles.barIconSize,
+              color: uiStyles.invertColorTheme,
             ),
             IconButton(
               onPressed: () {},
-              icon: const Icon(Icons.navigate_next),
-              iconSize: 40,
+              icon: const Icon(Icons.settings),
+              iconSize: uiStyles.barIconSize,
+              color: uiStyles.invertColorTheme,
             ),
           ],
         ),
         body: Container(
-          color: Colors.black12,
+          color: uiStyles.ColorTheme,
           child: Center(
             child: Column(
               mainAxisSize: MainAxisSize.max,
@@ -43,10 +47,11 @@ class MyRow extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    ColorBox(),
-                    ColorBox(),
-                    ColorBox(),
-                    ColorBox(),
+                    bitBox,
+                    bitBox,
+                    bitBox,
+                    bitBox,
+                    //ColorBox(),
                   ],
                 ),
                 Container(
@@ -116,37 +121,5 @@ class MyRow extends StatelessWidget {
             ),
           ),
         ));
-  }
-}
-
-class ColorBox extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 40,
-      height: 80,
-      decoration: BoxDecoration(
-        color: Colors.green,
-        border: Border.all(
-          color: Colors.black,
-        ),
-      ),
-    );
-  }
-}
-
-class ColorBoxBig extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 100,
-      height: 100,
-      decoration: BoxDecoration(
-        color: Colors.red[200],
-        border: Border.all(
-          color: Colors.black,
-        ),
-      ),
-    );
   }
 }
