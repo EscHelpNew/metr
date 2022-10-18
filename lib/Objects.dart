@@ -20,8 +20,5 @@ var bitBox = BitBox(
   height: 18,
   numBlock: 4,
 );
-var uiLogo = LogoImage();
 
-//UI button
-var bSizeButton = UISizeButton();
-var bRitmButton = UIRitmButton();
+

@@ -46,21 +46,11 @@ class MyRow extends StatelessWidget {
                 ),
                 Column(
                   children: [
-                    uiLogo.build(context),
+                    LogoImage(),
                   ],
                 ),
                 SizedBox(
                   height: 30,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    bSizeButton,
-                    bRitmButton,
-                  ],
-                ),
-                SizedBox(
-                  height: 20,
                 ),
                 Center(
                   child: Container(
@@ -68,13 +58,24 @@ class MyRow extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    UISizeButton(),
+                    UIRitmButton(),
+                  ],
+                ),
+                SizedBox(
                   height: 25,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    ButtonPlus(),
                     UIMinusButton(),
+                    UISliderBPM(),
+                    ButtonPlus(),
                   ],
                 ),
                 SizedBox(

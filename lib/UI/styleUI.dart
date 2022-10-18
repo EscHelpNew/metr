@@ -18,6 +18,7 @@ class UIStyles {
   //obj
 
   //button
+  TextStyle TimerStyle;
 
   UIStyles({String theme = 'dark'}) {
     if (theme == 'dark') {
@@ -40,6 +41,10 @@ class UIStyles {
     );
     invertColorTheme = Colors.white;
     ColorTheme = Colors.black54;
+    TimerStyle = const TextStyle(
+      color: Colors.white,
+      fontSize: 16,
+    );
   }
 
   void _whiteTheme() {

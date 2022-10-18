@@ -169,6 +169,9 @@ class UITimerConfig extends StatefulWidget {
 }
 
 class _UITimerConfigState extends State<UITimerConfig> {
+  final double _btnHeight = 30;
+  final double _btnWidth = 90;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -178,30 +181,54 @@ class _UITimerConfigState extends State<UITimerConfig> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
+            height: _btnHeight,
+            width: _btnWidth,
             child: ElevatedButton(
               onPressed: () {},
-              child: Text('3 Minute'),
+              child: Text(
+                '3 Min',
+                style: uiStyles.TimerStyle,
+              ),
             ),
           ),
           Container(
+            height: _btnHeight,
+            width: _btnWidth,
             child: ElevatedButton(
               onPressed: () {},
-              child: Text('4 Minute'),
+              child: Text(
+                '4 Min',
+                style: uiStyles.TimerStyle,
+              ),
             ),
           ),
           Container(
+            height: _btnHeight,
+            width: _btnWidth,
             child: ElevatedButton(
               onPressed: () {},
-              child: Text('5 Minute'),
+              child: Text(
+                '5 Min',
+                style: uiStyles.TimerStyle,
+              ),
             ),
           ),
           Container(
+            height: _btnHeight,
+            width: _btnWidth,
             child: ElevatedButton(
               onPressed: () {},
               child: Row(
                 children: [
-                  Text('Auto'),
-                  Icon(Icons.settings),
+                  Text(
+                    'Auto ',
+                    style: uiStyles.TimerStyle,
+                  ),
+                  const Icon(
+                    Icons.settings,
+                    color: Colors.white,
+                    size: 18,
+                  ),
                 ],
               ),
             ),

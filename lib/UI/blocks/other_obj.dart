@@ -205,3 +205,33 @@ class _UILinerProgressState extends State<UILinerProgress> {
     return Container();
   }
 }
+
+class UISliderBPM extends StatefulWidget {
+  const UISliderBPM({Key key}) : super(key: key);
+
+  @override
+  State<UISliderBPM> createState() => _UISliderBPMState();
+}
+
+class _UISliderBPMState extends State<UISliderBPM> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 65,
+      width: 250,
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.black),
+          gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment(1, 1),
+              colors: <Color>[
+                Color.fromARGB(255, 96, 32, 223),
+                Color.fromARGB(255, 245, 244, 242),
+              ]),
+          borderRadius: BorderRadius.all(
+            Radius.circular(5),
+          )),
+      child: Text(""),
+    );
+  }
+}
